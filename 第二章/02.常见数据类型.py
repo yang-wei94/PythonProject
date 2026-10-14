@@ -56,7 +56,7 @@ print(msg4)
 
 print( "\t欢迎大家进入到Python课程的学习!\n\t大家记得一键三连哦~") # \n 换行  \t  按了Tab缩进
 
-字符串拼接
+#字符串拼接
 s1 = "人生苦短" "我用python"  ",ok"
 print(s1)
 
