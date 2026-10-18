@@ -15,6 +15,6 @@ for i in range(5):
         break
     else:
         print("登录失败,请重新登录.")
-        if i== 4:
+        if i == 4:
             print("登陆失败超过5次,不允许再登录")
             break

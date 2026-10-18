@@ -10,7 +10,6 @@
               break: 只能出现在循环中,表示结束或者跳出循环的含义(break跳出循环时,while后面的else中的代码将不会执行)
               continue: 只能出现在循环中,表示中断本次循环,直接进入下一次循环.
 """
-from http.cookiejar import user_domain_match
 
 while True:
     # 1.接收输入的用户名和密码
