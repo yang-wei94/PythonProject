@@ -42,6 +42,7 @@ print(type(s[0:5:1]))
 print(s[:5:1])
 print(s[:5:])
 print(s[:5])
+print(s[::-1])
 
 print(s[0:5:2])
 print(s[0:-2:1])

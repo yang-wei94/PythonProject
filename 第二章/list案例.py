@@ -72,14 +72,14 @@ list3 = ["W", "A", "S", "D"]
 str_list = [*list1, *list2, *list3]
 print("合并后的列表是:", str_list)
 
-list = []
+new_list = []
 for i in str_list:
-    if i not in list:
-        list.append(i)
-print("合并完,去重后的列表为:", list)
+    if i not in new_list:
+        new_list.append(i)
+print("合并完,去重后的列表为:", new_list)
 
-list.sort()
-print("排序后列表:", list)
+new_list.sort()
+print("排序后列表:", new_list)
 
 
 """
@@ -89,10 +89,10 @@ print("排序后列表:", list)
 list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30]
 
-list = [i for i in range(1,31) if i % 3 == 0 or i % 5 == 0]
-print("新列表:", list)
+list6 = [i**2 for i in range(1,31) if i % 3 == 0 or i % 5 == 0]
+print("新列表:", list6)
 
 #####将如下列表中正数提取出来,封装为一个新的列表
 list1 = [11, 2, 31, 4, -5, 15, 17, 28, 49, 10, -11, 16, 54, -14, 36, -16, 87, -39]
-list = [i for i in list1 if i > 0]
-print("新的列表:", list)
+list7 = [i for i in list1 if i > 0]
+print("新的列表:", list7)

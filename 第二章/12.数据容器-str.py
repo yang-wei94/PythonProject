@@ -1,5 +1,5 @@
 # -------------------------字符串常用方法------------------
-from 第二章.list案例 import str_list
+#from 第二章.list案例 import str_list
 
 s = "Hello-python-Hello-world"
 
