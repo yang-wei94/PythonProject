@@ -1,3 +1,4 @@
+from circle_fun import circle_area
 print("======= 计算披萨成本 =========")
 
 # 披萨尺寸（半径，厘米）
