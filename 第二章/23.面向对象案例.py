@@ -15,8 +15,10 @@
         4.1 输出格式为: "姓名：张三 | 语文：85 | 数学：90 | 英语：88 | 总分：263"
     5. 展示全部学生成绩：展示出系统中所有学生的成绩
 """
+from tkinter.font import names
 
-class Student:
+
+class student:
     def __init__(self,name,chinese,math,english):
         self.name = name
         self.chinese = chinese
@@ -44,12 +46,104 @@ class EduManagement:
     def __init__(self):
         self.student_list = [] # 列表, 记录的是在校学生的成绩
 
+    # 添加学生
+    def add_student(self):
+        name = input("请输入要添加的学生姓名:")
+        for s in self.student_list:
+            if s.name == name:
+                print("该学生已存在,请重新添加")
+                return
+
+        chinese = int(input("请输入语文成绩:"))
+        math = int(input("请输入数学成绩:"))
+        english = int(input("请输入英语成绩:"))
+
+        if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 < english <= 100:
+            stu = student(name, chinese, math, english)
+            self.student_list.append(stu)
+            print("学生信息添加成功!")
+        else:
+            print("学生成绩必须0-100之间")
+
+    # 修改学生成绩
+    def update_student(self):
+        name = input("请输入要修改的学生姓名:")
+        for s in self.student_list:
+            if s.name == name:
+                print(f"该学生的成绩为:{s}")
+
+                chinese = int(input("请输入语文成绩:"))
+                math = int(input("请输入数学成绩:"))
+                english = int(input("请输入英语成绩:"))
+
+                if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 < english <= 100:
+                    s.update_scores(chinese, math, english)
+                    print("学生信息修改成功!")
+                    print(f"修改后的学生成绩为:{s}")
+                    return
+                else:
+                    print("各科成绩必须得在0-100之间.")
+                    return
+        print("未找到该学生信息,修改失败")
+
+    # 删除学生成绩
+    def delete_student(self):
+        name = input("请输入要修改的学生姓名:")
+        for s in self.student_list:
+            if s.name == name:
+                self.student_list.remove(s)
+                print("该学生信息删除成功!")
+                return
+        print("未找到该学生信息,删除失败")
+
+    # 查询学生成绩
+    def query_student(self):
+        name = input("请输入查询的学生姓名:")
+        for s in self.student_list:
+            if s.name == name:
+                print(f"要查询的学生成绩为:{s}")
+                return
+        print("未找到该学生信息,查询失败")
+
+    # 展示全部学生成绩
+    def list_students(self):
+        for s in self.student_list:
+            print(s)
+
+    def run(self):
+        print(f"欢迎使用教务管理系统 V{EduManagement.system_verson}")
+
+        while True:
+            print("################################################################################")
+            print("# 1.添加学生信息 2.修改学生信息 3.删除学生信息 4.查询学生信息 5.展示全部学生信息 6.退出系统 #")
+            print("################################################################################")
+            print()
+
+            choice = input("请输入你的操作指令(1-6):")
+            match choice:
+                case "1": # 添加学生成绩
+                    self.add_student()
+                case "2": # 修改学生成绩
+                    self.update_student()
+                case "3": # 删除学生成绩
+                    self.delete_student()
+                case "4": # 查询学生成绩
+                    self.query_student()
+                case "5": # 遍历所有学生成绩
+                    self.list_students()
+                case "6": # 退出系统
+                    print("Bye~~")
+                    break
+                case _:
+                    print("非法输入,请重新输入!")
+
+
+
 
 
 # 测试
-c1 = Student("张三",80,90,85)
-print(c1)
-c1.update_scores(english=92)
-print(c1)
+if __name__ == '__main__':
+    edu_management = EduManagement()
+    edu_management.run()
 
 
