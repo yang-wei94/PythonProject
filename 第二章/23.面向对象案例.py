@@ -73,7 +73,6 @@ class EduManagement:
                 print(f"该学生的成绩为:{s}")
 
                 chinese = int(input("请输入语文成绩:"))
-                math = int(input("请输入数学成绩:"))
                 english = int(input("请输入英语成绩:"))
 
                 if 0 <= chinese <= 100 and 0 <= math <= 100 and 0 < english <= 100:
